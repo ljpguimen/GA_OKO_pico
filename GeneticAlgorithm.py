@@ -83,7 +83,10 @@ def genetic_algorithm():
 	children = people.child_group(num_init_children, parents, dm_actuators)       # create children from the given parents
 	children.mutate(mutation_percentage, dm_actuators)    # mutate the children
 	
-	all_people = people.person_group(parents, children)     # combine all of the children and parents into a single container
+	# all_people = people.person_group(parents, children)     # combine all of the children and parents into a single container
+
+	all_people = people.person_group(parents, children, children, children, children, children)
+	
 	all_people.test_and_sort_people(dm_actuators,ps)   # measure the figures of merits and sort the people so the highest figure of merit is 0th indexed
 	
 	best_person = all_people.people[0]  # the best person is the 0th indexed person in all_people
@@ -115,7 +118,11 @@ def genetic_algorithm():
 		parents = people.parent_group(num_parents,num_genes, None, None, all_people)   # create parents from the best performing children
 		children = people.child_group(num_children, parents, dm_actuators)       # create children from the just created parents
 		children.mutate(mutation_percentage, dm_actuators)    # mutate the children
-		all_people = people.person_group(parents, children)     # combine all of the children and parents into a single container
+
+		# all_people = people.person_group(parents, children)     # combine all of the children and parents into a single container
+
+		all_people = people.person_group(parents, children, children, children, children, children)
+
 		all_people.test_and_sort_people(dm_actuators,ps)   # measure the figures of merits and sort the people so the highest figure of merit is 0th indexed
 
 		
